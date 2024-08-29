@@ -8,4 +8,6 @@
 - Installed zod validation library.
 - Zod provides upfront typescript schema validation for your application.
 - Created schema for signUp, signIn, message, acceptMessage and verification using zod library.
-
+- Created lib folder for database connection file & for UI component library.
+- Generated MONGODB_URI for data connection from database.
+- Created database connection file.
