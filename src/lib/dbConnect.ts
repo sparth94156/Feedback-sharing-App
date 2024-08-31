@@ -1,7 +1,5 @@
 "use server"
 import mongoose from "mongoose";
-// import { exit } from "process";
-// let isconnection = false;
 
 // we're checking for the object which is going to come when we connect to DB
 type connectionObject = {
@@ -19,7 +17,6 @@ async function connectToDB(): Promise<void>{
     try{
         const db = await mongoose.connect(process.env.MONGODB_URI || '' ,{})
 
-        // console.log(db.connections)
         // setting isConnected property to readyState (check the db object for more clarity)
         connection.isConnected = db.connections[0].readyState;
         console.log("Database connected successfully")
@@ -30,5 +27,5 @@ async function connectToDB(): Promise<void>{
     }
 }
 
-export default connectToDB
+export default connectToDB;
 
