@@ -7,7 +7,7 @@ export const userNameValidation = z
 
 export const signUpSchema = z.object({
     userName: userNameValidation,
-    email: z.string().email({message: 'Invalid email'}),
+    email: z.string().email({message: 'Invalid email'}),    // zod does auto regex validation
     password: z.string()
     .min(6, {message: 'Password must be atleast 6 characters'})
 })

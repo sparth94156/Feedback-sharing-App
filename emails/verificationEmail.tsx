@@ -16,12 +16,12 @@ interface verificationEmailProps {
 
 export default function VerificationEmail({
   username,
-  otp
+  otp,
 }: verificationEmailProps) {
   return (
     <Html lang="en" dir="ltr">
       <Head>
-        <title>Verification Code</title>  
+        <title>Verification Code</title>
         <Preview>OTP for verification</Preview>
         <Font
           fontFamily="Roboto"
@@ -53,7 +53,9 @@ export default function VerificationEmail({
             If you did not request this code, please ignore this email.
           </Text>
         </Row>
-        {/* <Row>
+        {/* 
+        I'm gonna implement this very soon
+        <Row>
         <Button
           href={`http://localhost:3000/verify/${username}`}
           style={{ color: '#61dafb' }}

@@ -5,7 +5,7 @@ import { ApiResponse } from "@/types/apiResponse";
 export async function sendVerificationEmail(
   email: string,
   username: string,
-  verifyCode: string,
+  verifyCode: string, //otp
 ): Promise<ApiResponse> {
   
   // both resend and react-email have same code for sending email 

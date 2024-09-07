@@ -43,12 +43,11 @@ export async function POST(request: Request) {
 
         await existingUserByEmail.save()  // Now the code will directly move to send verification code 
       }
-      // TODO
     } else {
       // User email does not exists
       const hashPassword = await bcrypt.hash(password, 10);
       const presentDate = new Date();
-      const expiryDate = new Date(presentDate.getTime() + 1 * 60 * 60 * 1000); // 3600000 or expiryDate = presentDate.setHours(presntDate.getHours() + 1)
+      const expiryDate = new Date(presentDate.getTime() + 1 * 60 * 60 * 1000); // 3600000 or expiryDate = presentDate.setHours(presentDate.getHours() + 1)
 
       const newUser = new userModel({
         username,
@@ -61,7 +60,7 @@ export async function POST(request: Request) {
         messagesSent: [],
       });
 
-      newUser.save(); // Saves the data to the databse
+      newUser.save(); // Saves the data to the database
     }
     // Sending the verification email
    const emailResponse =  await sendVerificationEmail(
@@ -77,9 +76,9 @@ export async function POST(request: Request) {
     if(!emailResponse.success){
       return Response.json({
         success: false,
-        message: "Username already exists, Try using another name", // email.message
+        message: emailResponse.message, // Or u can write email.message if u dont want to write hardcoded message
       },
-    {status: 500})
+    {status: 500})  
     }
     // Generic return
     return Response.json(
@@ -87,7 +86,7 @@ export async function POST(request: Request) {
         success: true,
         message: "User registered Successfully, Please verify your email",  
       },
-      {status: 201}
+      {status: 201} 
     );
   } catch (error) {
     console.log("Error sending verification email ", error);
