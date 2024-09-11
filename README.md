@@ -20,7 +20,14 @@
     - Created ApiResponse file inside types folder for API response type for sendVerificationEmail.
     - Copy the send email code from the resend documentation.
     - Creates api folder for signUp functionality.  (./api/signIn/routs.ts)
-    - Create a POST request for signUp.
+    - Create a POST request for sign-up.
+    - Created AuthOptions for custom authentication for sign-up in a seperate options.ts file.
+    - Using credentials provider for sign-up.
+    - Added the configuration for sign-up using credentials like name, credentials, authorize etc.
+    - Added pages, callbacks, secret properties to the configuration object.
+    - Created (auth) folder for grouping various folder into a single folder.
+    - Created middleware.ts file for navigating to sign-in/sign-up page.
+    - Tested the sign-up api using postman.
 
 # SignUp WorkFlow
 
