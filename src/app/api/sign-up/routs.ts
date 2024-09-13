@@ -80,6 +80,7 @@ export async function POST(request: Request) {
       },
     {status: 500})  
     }
+    
     // Generic return
     return Response.json(
       {
@@ -87,13 +88,13 @@ export async function POST(request: Request) {
         message: "User registered Successfully, Please verify your email",  
       },
       {status: 201} 
-    );
+    )
   } catch (error) {
     console.log("Error sending verification email ", error);
     return Response.json(
       {
         success: false,
-        message: "An Error Occured While Sending Email Verification",
+        message: "An Error Occured while Sending Email Verification",
       },
       {
         status: 500,

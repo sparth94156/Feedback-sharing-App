@@ -11,8 +11,11 @@ export default function Page() {
   }
 
   return (
-    <a href="/api/auth/signin" className="bg-blue-500 p-3">
+    <div className="m-4">
+       <a href="/api/auth/signin" className="bg-blue-500 p-3 rounded-lg">
       Sign in
     </a>
+    </div>
+   
   );
 }
